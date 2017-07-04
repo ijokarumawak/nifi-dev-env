@@ -133,6 +133,10 @@ nifi-nar-bundles/nifi-jms-bundle/nifi-jms-cf-service,\
 nifi-nar-bundles/nifi-jms-bundle/nifi-jms-cf-service-nar,\
 nifi-nar-bundles/nifi-jms-bundle/nifi-jms-processors,\
 nifi-nar-bundles/nifi-jms-bundle/nifi-jms-processors-nar clean install -DskipTests"
+
+alias nifi-build-poi="mvn --projects \
+nifi-nar-bundles/nifi-poi-bundle/nifi-poi-processors,\
+nifi-nar-bundles/nifi-poi-bundle/nifi-poi-nar clean install -DskipTests"
  
 alias nifi-deploy-nar="nars=\$(find nifi-nar-bundles/ -name '*.nar' |grep -v test);\
   cp -p \$nars \$NIFI_SS_HOME/lib; rm -f \$NIFI_SS_HOME/lib/nifi-framework-nar.nar;\
