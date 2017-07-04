@@ -62,6 +62,12 @@ nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/n
 nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/nifi-distributed-cache-client-service,\
 nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/nifi-distributed-cache-services-nar install -DskipTests"
 
+alias nifi-record-serialization-service="mvn --projects \
+nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api,\
+nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services,\
+nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services-nar install -DskipTests
+"
+
 alias nifi-build-couchbase="mvn --projects \
 nifi-nar-bundles/nifi-couchbase-bundle/nifi-couchbase-service-api,\
 nifi-nar-bundles/nifi-couchbase-bundle/nifi-couchbase-service-api-nar,\
@@ -122,11 +128,11 @@ nifi-nar-bundles/nifi-atlas-bundle/nifi-atlas-reporting-task,\
 nifi-nar-bundles/nifi-atlas-bundle/nifi-atlas-nar clean install -DskipTests"
 
 alias nifi-build-jms="mvn --projects \
-  nifi-nar-bundles/nifi-jms-bundle,\
-  nifi-nar-bundles/nifi-jms-bundle/nifi-jms-cf-service,\
-  nifi-nar-bundles/nifi-jms-bundle/nifi-jms-cf-service-nar,\
-  nifi-nar-bundles/nifi-jms-bundle/nifi-jms-processors,\
-  nifi-nar-bundles/nifi-jms-bundle/nifi-jms-processors-nar clean install -DskipTests"
+nifi-nar-bundles/nifi-jms-bundle,\
+nifi-nar-bundles/nifi-jms-bundle/nifi-jms-cf-service,\
+nifi-nar-bundles/nifi-jms-bundle/nifi-jms-cf-service-nar,\
+nifi-nar-bundles/nifi-jms-bundle/nifi-jms-processors,\
+nifi-nar-bundles/nifi-jms-bundle/nifi-jms-processors-nar clean install -DskipTests"
  
 alias nifi-deploy-nar="nars=\$(find nifi-nar-bundles/ -name '*.nar' |grep -v test);\
   cp -p \$nars \$NIFI_SS_HOME/lib; rm -f \$NIFI_SS_HOME/lib/nifi-framework-nar.nar;\
