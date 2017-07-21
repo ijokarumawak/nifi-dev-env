@@ -122,6 +122,11 @@ nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundl
 nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services-nar,\
  install -DskipTests"
 
+alias nifi-build-hadoop="mvn --projects \
+nifi-nar-bundles/nifi-hadoop-bundle,\
+nifi-nar-bundles/nifi-hadoop-bundle/nifi-hdfs-processors,\
+nifi-nar-bundles/nifi-hadoop-bundle/nifi-hadoop-nar clean install -DskipTests"
+
 alias nifi-build-atlas="mvn --projects \
 nifi-nar-bundles/nifi-atlas-bundle,\
 nifi-nar-bundles/nifi-atlas-bundle/nifi-atlas-reporting-task,\
