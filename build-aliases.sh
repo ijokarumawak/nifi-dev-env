@@ -127,7 +127,27 @@ nifi-nar-bundles/nifi-hadoop-bundle,\
 nifi-nar-bundles/nifi-hadoop-bundle/nifi-hdfs-processors,\
 nifi-nar-bundles/nifi-hadoop-bundle/nifi-hadoop-nar clean install -DskipTests"
 
+alias nifi-build-hbase="mvn --projects \
+nifi-nar-bundles/nifi-standard-services,\
+nifi-nar-bundles/nifi-standard-services/nifi-standard-services-api-nar,\
+nifi-nar-bundles/nifi-standard-services/nifi-hbase-client-service-api,\
+nifi-nar-bundles/nifi-standard-services/nifi-hbase_1_1_2-client-service-bundle,\
+nifi-nar-bundles/nifi-standard-services/nifi-hbase_1_1_2-client-service-bundle/nifi-hbase_1_1_2-client-service,\
+nifi-nar-bundles/nifi-standard-services/nifi-hbase_1_1_2-client-service-bundle/nifi-hbase_1_1_2-client-service-nar,\
+nifi-nar-bundles/nifi-hbase-bundle,\
+nifi-nar-bundles/nifi-hbase-bundle/nifi-hbase-processors,\
+nifi-nar-bundles/nifi-hbase-bundle/nifi-hbase-nar clean install -DskipTests"
+
+alias nifi-build-hive="mvn --projects \
+nifi-nar-bundles/nifi-hive-bundle,\
+nifi-nar-bundles/nifi-hive-bundle/nifi-hive-services-api,\
+nifi-nar-bundles/nifi-hive-bundle/nifi-hive-services-api-nar,\
+nifi-nar-bundles/nifi-hive-bundle/nifi-hive-processors,\
+nifi-nar-bundles/nifi-hive-bundle/nifi-hive-nar clean install -DskipTests"
+
+
 alias nifi-build-atlas="mvn --projects \
+nifi-nar-bundles/nifi-extension-utils/nifi-reporting-utils,\
 nifi-nar-bundles/nifi-atlas-bundle,\
 nifi-nar-bundles/nifi-atlas-bundle/nifi-atlas-reporting-task,\
 nifi-nar-bundles/nifi-atlas-bundle/nifi-atlas-nar clean install -DskipTests"
@@ -142,6 +162,10 @@ nifi-nar-bundles/nifi-jms-bundle/nifi-jms-processors-nar clean install -DskipTes
 alias nifi-build-poi="mvn --projects \
 nifi-nar-bundles/nifi-poi-bundle/nifi-poi-processors,\
 nifi-nar-bundles/nifi-poi-bundle/nifi-poi-nar clean install -DskipTests"
+ 
+alias nifi-build-azure="mvn --projects \
+nifi-nar-bundles/nifi-azure-bundle/nifi-azure-processors,\
+nifi-nar-bundles/nifi-azure-bundle/nifi-azure-nar clean install -DskipTests"
  
 alias nifi-deploy-nar="nars=\$(find nifi-nar-bundles/ -name '*.nar' |grep -v test);\
   cp -p \$nars \$NIFI_SS_HOME/lib; rm -f \$NIFI_SS_HOME/lib/nifi-framework-nar.nar;\
