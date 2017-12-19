@@ -1,6 +1,6 @@
 #/bin/sh
 
-alias nifi-clean-install="mvn clean install -T4 -Pdir-only -DskipTests"
+alias nifi-clean-install="mvn clean install -T4 -Ddir-only -DskipTests"
 alias nifi-contrib-check="mvn -Pcontrib-check verify"
 
 alias nifi-build-properties="mvn --projects nifi-commons/nifi-properties,\
