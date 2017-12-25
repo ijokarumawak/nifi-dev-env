@@ -35,6 +35,13 @@ nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-site-to-site,\
 nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-web/nifi-web-api,\
 nifi-nar-bundles/nifi-framework-bundle/nifi-framework-nar install -DskipTests"
 
+alias nifi-build-site-to-site-reporting="mvn --projects \
+nifi-nar-bundles/nifi-extension-utils/nifi-reporting-utils,\
+nifi-nar-bundles/nifi-site-to-site-reporting-bundle/nifi-site-to-site-reporting-task,\
+nifi-nar-bundles/nifi-site-to-site-reporting-bundle/nifi-site-to-site-reporting-nar \
+install -DskipTests"
+
+
 alias nifi-build-web-api="mvn --projects \
 nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto,\
 nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-web/nifi-web-api,\
