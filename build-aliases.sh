@@ -120,6 +120,10 @@ nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-9-processors,\
 nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-9-nar,\
 nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-10-processors,\
 nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-10-nar,\
+nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-11-processors,\
+nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-11-nar,\
+nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-1-0-processors,\
+nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-1-0-nar,\
  install -DskipTests"
 
 alias nifi-build-record-serialization="mvn --projects \
