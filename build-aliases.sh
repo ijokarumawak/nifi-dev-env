@@ -61,6 +61,13 @@ nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors,\
 nifi-nar-bundles/nifi-standard-bundle/nifi-standard-content-viewer,\
 nifi-nar-bundles/nifi-standard-bundle/nifi-standard-nar install -DskipTests"
 
+alias nifi-build-proxy="mvn --projects \
+nifi-nar-bundles/nifi-standard-services/nifi-standard-services-api-nar,\
+nifi-nar-bundles/nifi-standard-services/nifi-proxy-configuration-api,\
+nifi-nar-bundles/nifi-standard-services/nifi-proxy-configuration-bundle/nifi-proxy-configuration,\
+nifi-nar-bundles/nifi-standard-services/nifi-proxy-configuration-bundle/nifi-proxy-configuration-nar,\
+ install -DskipTests"
+
 alias nifi-build-distriuted-cache="mvn --projects \
 nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-client-service-api,\
 nifi-nar-bundles/nifi-standard-services/nifi-standard-services-api-nar,\
@@ -70,8 +77,8 @@ nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/n
 nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/nifi-distributed-cache-services-nar install -DskipTests"
 
 alias nifi-record-serialization-service="mvn --projects \
-nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api,\
-nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services,\
+nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-avro-record-utils,\
+nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api,\ nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services,\
 nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services-nar install -DskipTests
 "
 
@@ -127,6 +134,7 @@ nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-1-0-nar,\
  install -DskipTests"
 
 alias nifi-build-record-serialization="mvn --projects \
+nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-avro-record-utils,\
 nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api,\
 nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle,\
 nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services,\
@@ -183,4 +191,19 @@ alias nifi-deploy-nar="nars=\$(find nifi-nar-bundles/ -name '*.nar' |grep -v tes
   rm -f \$NIFI_SS_HOME/lib/dummy-*;\
   rm -f \$NIFI_SS_HOME/lib/nifi-cybersecurity-nar-1.2.0-SNAPSHOT.nar;\
   rm -f \$NIFI_SS_HOME/lib/nifi-ranger-nar-1.2.0-SNAPSHOT.nar"
+
+# --------
+# Toolkit
+# --------
+
+alias nifi-toolkit-build-cli='mvn --projects nifi-toolkit-cli,nifi-toolkit-assembly install -DskipTests'
+
+# --------
+# Registry
+# --------
+
+alias nifi-reg-build-provider-api="mvn --projects nifi-registry-provider-api install -DskipTests\
+  && cp -p nifi-registry-provider-api/target/nifi-registry-provider-api-*.jar $NIFI_REG_SS_HOME/lib/"
+alias nifi-reg-build-framework="mvn --projects nifi-registry-framework install -DskipTests\
+  && cp -p nifi-registry-framework/target/nifi-registry-framework-*.jar $NIFI_REG_SS_HOME/lib/"
 
