@@ -185,6 +185,14 @@ nifi-nar-bundles/nifi-poi-bundle/nifi-poi-nar clean install -DskipTests"
 alias nifi-build-azure="mvn --projects \
 nifi-nar-bundles/nifi-azure-bundle/nifi-azure-processors,\
 nifi-nar-bundles/nifi-azure-bundle/nifi-azure-nar clean install -DskipTests"
+
+alias nifi-build-aws="mvn --projects \
+nifi-nar-bundles/nifi-aws-bundle/nifi-aws-service-api,\
+nifi-nar-bundles/nifi-aws-bundle/nifi-aws-abstract-processors,\
+nifi-nar-bundles/nifi-aws-bundle/nifi-aws-processors,\
+nifi-nar-bundles/nifi-aws-bundle/nifi-aws-service-api-nar,\
+nifi-nar-bundles/nifi-aws-bundle/nifi-aws-nar \
+clean install -DskipTests"
  
 alias nifi-deploy-nar="nars=\$(find nifi-nar-bundles/ -name '*.nar' |grep -v test);\
   cp -p \$nars \$NIFI_SS_HOME/lib; rm -f \$NIFI_SS_HOME/lib/nifi-framework-nar.nar;\
